@@ -1,40 +1,56 @@
-using UnitTesting.Tasks;
+using static UnitTesting.Tasks.FizzBuzz;
 
 namespace UnitTesting.UnitTests.Tasks
 {
     [TestClass]
     public class FizzBuzzTests
     {
-        [DataRow(15, "FizzBuzz")]
-        [DataRow(30, "FizzBuzz")]
-        [DataRow(45, "FizzBuzz")]
-        [DataRow(75, "FizzBuzz")]
+        //arrange
+        [DataRow(15, FizzBuzzEnum.FizzBuzz)]
+        [DataRow(30, FizzBuzzEnum.FizzBuzz)]
+        [DataRow(45, FizzBuzzEnum.FizzBuzz)]
+        [DataRow(75, FizzBuzzEnum.FizzBuzz)]
         [TestMethod]
-        public void Should_Be_FizzBuzz(int num, string result)
+        public void Should_Be_FizzBuzz(int num, FizzBuzzEnum result)
         {
-            Assert.AreEqual(FizzBuzz.ReplaceWithFizzBuzz(num), result);
+            //act
+            var replacement = ReplaceWithFizzBuzz(num);
+
+            //assert
+            Assert.AreEqual(replacement, result);
         }
 
-        [DataRow(3, "Fizz")]
-        [DataRow(9, "Fizz")]
-        [DataRow(27, "Fizz")]
-        [DataRow(99, "Fizz")]
+        //arrange
+        [DataRow(3, FizzBuzzEnum.Fizz)]
+        [DataRow(9, FizzBuzzEnum.Fizz)]
+        [DataRow(27, FizzBuzzEnum.Fizz)]
+        [DataRow(99, FizzBuzzEnum.Fizz)]
         [TestMethod]
-        public void Should_Be_Fizz(int num, string result)
+        public void Should_Be_Fizz(int num, FizzBuzzEnum result)
         {
-            Assert.AreEqual(FizzBuzz.ReplaceWithFizzBuzz(num), result);
+            //act
+            var replacement = ReplaceWithFizzBuzz(num);
+
+            //assert
+            Assert.AreEqual(replacement, result);
         }
 
-        [DataRow(5, "Buzz")]
-        [DataRow(25, "Buzz")]
-        [DataRow(50, "Buzz")]
-        [DataRow(95, "Buzz")]
+        //arrange
+        [DataRow(5, FizzBuzzEnum.Buzz)]
+        [DataRow(25, FizzBuzzEnum.Buzz)]
+        [DataRow(50, FizzBuzzEnum.Buzz)]
+        [DataRow(95, FizzBuzzEnum.Buzz)]
         [TestMethod]
-        public void Should_Be_Buzz(int num, string result)
+        public void Should_Be_Buzz(int num, FizzBuzzEnum result)
         {
-            Assert.AreEqual(FizzBuzz.ReplaceWithFizzBuzz(num), result);
+            //act
+            var replacement = ReplaceWithFizzBuzz(num);
+
+            //assert
+            Assert.AreEqual(replacement, result);
         }
 
+        //arrange
         [DataRow(1)]
         [DataRow(2)]
         [DataRow(23)]
@@ -43,17 +59,23 @@ namespace UnitTesting.UnitTests.Tasks
         [TestMethod]
         public void Should_Be_NumberItself(int num)
         {
-            Assert.AreEqual(FizzBuzz.ReplaceWithFizzBuzz(num), num.ToString());
+            //act
+            var replacement = ReplaceWithFizzBuzz(num);
+
+            //assert
+            Assert.AreEqual(replacement, FizzBuzzEnum.NumberItself);
         }
 
+        //arrange
         [DataRow(-5)]
         [DataRow(104)]
         [DataRow(0)]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]//assert
         [TestMethod]
         public void Should_Throw_ArgumentOutOfRangeException_If_Input_OutOfRange(int num)
         {
-            FizzBuzz.ReplaceWithFizzBuzz(num);
+            //act
+            ReplaceWithFizzBuzz(num);
         }
     }
 }
