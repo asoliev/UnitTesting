@@ -12,13 +12,13 @@ namespace UnitTesting.UnitTests.Tasks
         [DataRow(33, OddEvenEnum.Odd)]
         [DataRow(81, OddEvenEnum.Odd)]
         [TestMethod]
-        public void Should_Be_Odd(int num, OddEvenEnum result)
+        public void Should_Be_Odd(int num, OddEvenEnum expecting)
         {
             //act
-            var check = CheckOddEven(num);
+            var actual = CheckOddEven(num);
 
             //assert
-            Assert.AreEqual(check, result);
+            Assert.AreEqual(actual, expecting);
         }
 
         //arrange
@@ -28,13 +28,13 @@ namespace UnitTesting.UnitTests.Tasks
         [DataRow(82, OddEvenEnum.Even)]
         [DataRow(100, OddEvenEnum.Even)]
         [TestMethod]
-        public void Should_Be_Even(int num, OddEvenEnum result)
+        public void Should_Be_Even(int num, OddEvenEnum expecting)
         {
             //act
-            var check = CheckOddEven(num);
+            var actual = CheckOddEven(num);
 
             //assert
-            Assert.AreEqual(check, result);
+            Assert.AreEqual(actual, expecting);
         }
 
         //arrange
@@ -44,13 +44,13 @@ namespace UnitTesting.UnitTests.Tasks
         [DataRow(17, OddEvenEnum.Prime)]
         [DataRow(73, OddEvenEnum.Prime)]
         [TestMethod]
-        public void Should_Be_Prime(int num, OddEvenEnum result)
+        public void Should_Be_Prime(int num, OddEvenEnum expecting)
         {
             //act
-            var check = CheckOddEven(num);
+            var actual = CheckOddEven(num);
 
             //assert
-            Assert.AreEqual(check, result);
+            Assert.AreEqual(actual, expecting);
         }
 
         //arrange

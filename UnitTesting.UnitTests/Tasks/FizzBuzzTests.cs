@@ -11,13 +11,13 @@ namespace UnitTesting.UnitTests.Tasks
         [DataRow(45, FizzBuzzEnum.FizzBuzz)]
         [DataRow(75, FizzBuzzEnum.FizzBuzz)]
         [TestMethod]
-        public void Should_Be_FizzBuzz(int num, FizzBuzzEnum result)
+        public void Should_Be_FizzBuzz(int num, FizzBuzzEnum expecting)
         {
             //act
-            var replacement = ReplaceWithFizzBuzz(num);
+            var actual = ReplaceWithFizzBuzz(num);
 
             //assert
-            Assert.AreEqual(replacement, result);
+            Assert.AreEqual(actual, expecting);
         }
 
         //arrange
@@ -26,13 +26,13 @@ namespace UnitTesting.UnitTests.Tasks
         [DataRow(27, FizzBuzzEnum.Fizz)]
         [DataRow(99, FizzBuzzEnum.Fizz)]
         [TestMethod]
-        public void Should_Be_Fizz(int num, FizzBuzzEnum result)
+        public void Should_Be_Fizz(int num, FizzBuzzEnum expecting)
         {
             //act
-            var replacement = ReplaceWithFizzBuzz(num);
+            var actual = ReplaceWithFizzBuzz(num);
 
             //assert
-            Assert.AreEqual(replacement, result);
+            Assert.AreEqual(actual, expecting);
         }
 
         //arrange
@@ -41,13 +41,13 @@ namespace UnitTesting.UnitTests.Tasks
         [DataRow(50, FizzBuzzEnum.Buzz)]
         [DataRow(95, FizzBuzzEnum.Buzz)]
         [TestMethod]
-        public void Should_Be_Buzz(int num, FizzBuzzEnum result)
+        public void Should_Be_Buzz(int num, FizzBuzzEnum expecting)
         {
             //act
-            var replacement = ReplaceWithFizzBuzz(num);
+            var actual = ReplaceWithFizzBuzz(num);
 
             //assert
-            Assert.AreEqual(replacement, result);
+            Assert.AreEqual(actual, expecting);
         }
 
         //arrange
@@ -60,10 +60,10 @@ namespace UnitTesting.UnitTests.Tasks
         public void Should_Be_NumberItself(int num)
         {
             //act
-            var replacement = ReplaceWithFizzBuzz(num);
+            var actual = ReplaceWithFizzBuzz(num);
 
             //assert
-            Assert.AreEqual(replacement, (FizzBuzzEnum)Enum.Parse(typeof(FizzBuzzEnum), num.ToString()));
+            Assert.AreEqual(actual, (FizzBuzzEnum)Enum.Parse(typeof(FizzBuzzEnum), num.ToString()));
         }
 
         //arrange

@@ -13,13 +13,13 @@ namespace UnitTesting.UnitTests.Tasks
         [DataRow(17, PrimeFactorEnum.Prime)]
         [DataRow(73, PrimeFactorEnum.Prime)]
         [TestMethod]
-        public void Should_Be_Prime(int num, PrimeFactorEnum result)
+        public void Should_Be_Prime(int num, PrimeFactorEnum expecting)
         {
             //act
-            var check = CheckPrimeComposite(num);
+            var actual = CheckPrimeComposite(num);
 
             //assert
-            Assert.AreEqual(check, result);
+            Assert.AreEqual(actual, expecting);
         }
 
         //arrange
@@ -28,13 +28,13 @@ namespace UnitTesting.UnitTests.Tasks
         [DataRow(33, PrimeFactorEnum.Composite)]
         [DataRow(100, PrimeFactorEnum.Composite)]
         [TestMethod]
-        public void Should_Be_Composite(int num, PrimeFactorEnum result)
+        public void Should_Be_Composite(int num, PrimeFactorEnum expecting)
         {
             //act
-            var check = CheckPrimeComposite(num);
+            var actual = CheckPrimeComposite(num);
 
             //assert
-            Assert.AreEqual(check, result);
+            Assert.AreEqual(actual, expecting);
         }
 
         //arrange
@@ -42,10 +42,10 @@ namespace UnitTesting.UnitTests.Tasks
         public void Should_Be_One_If_Input_One()
         {
             //act
-            var check = CheckPrimeComposite(1);
+            var actual = CheckPrimeComposite(1);
 
             //assert
-            Assert.AreEqual(check, PrimeFactorEnum.One);
+            Assert.AreEqual(actual, PrimeFactorEnum.One);
         }
 
         //arrange
