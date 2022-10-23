@@ -4,10 +4,9 @@
     {
         public enum FizzBuzzEnum
         {
-            Fizz,
-            Buzz,
-            FizzBuzz,
-            NumberItself
+            Fizz = 101,
+            Buzz = 102,
+            FizzBuzz = 103
         }
 
         public static FizzBuzzEnum ReplaceWithFizzBuzz(int num)
@@ -18,7 +17,7 @@
             if (num % 3 == 0 && num % 5 == 0) return FizzBuzzEnum.FizzBuzz;
             else if (num % 3 == 0) return FizzBuzzEnum.Fizz;
             else if (num % 5 == 0) return FizzBuzzEnum.Buzz;
-            else return FizzBuzzEnum.NumberItself;
+            else return (FizzBuzzEnum)Enum.Parse(typeof(FizzBuzzEnum), num.ToString());
         }
     }
 }

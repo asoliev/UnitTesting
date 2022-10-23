@@ -63,7 +63,7 @@ namespace UnitTesting.UnitTests.Tasks
             var replacement = ReplaceWithFizzBuzz(num);
 
             //assert
-            Assert.AreEqual(replacement, FizzBuzzEnum.NumberItself);
+            Assert.AreEqual(replacement, (FizzBuzzEnum)Enum.Parse(typeof(FizzBuzzEnum), num.ToString()));
         }
 
         //arrange
